@@ -3,6 +3,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const routes = require('./Routes/index');
+const uri = "mongodb+srv://mernstack:mernstack@cluster0.yjpkn.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
 
 const app = express();
 
@@ -28,7 +29,7 @@ app.use('/api', routes);
 //   - provide username, password and database name
 
 mongoose.connect(
-    'mongodb://localhost:27017/local', 
+    uri, 
     {
         useNewUrlParser: true,
         useUnifiedTopology: true
